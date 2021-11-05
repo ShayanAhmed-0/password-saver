@@ -1,0 +1,158 @@
+#include <iostream>
+#include <string>
+#include<conio.h>
+using namespace std;
+class a
+{
+	private:
+		string name;
+		string password;
+	public:
+	void setdata(string na,string pass)
+	{
+		name=na;
+		password=pass;
+	}
+	string getname()
+	{
+		return name;
+	}
+	string getpassword()
+	{
+		return password;
+	}
+};
+class id
+{
+	private:
+	 string google;
+	 string facebook;
+	 string instagram;
+	 string snapchat;
+	public:
+	void setdata(string gog,string fb,string insta,string snap)
+	{
+		google = gog;
+		facebook = fb;
+		instagram=insta;
+		snapchat=snap;
+	} 
+	string getgoogle()
+	{
+		return google;
+	}
+	string getfacebook()
+	{
+		return facebook;
+	}
+	string getinstagram()
+	{
+		return instagram;
+	}
+	string getsnapchat()
+	{
+		return snapchat;
+	}
+};
+class password
+{
+	private:
+		string passgog;
+		string passfb;
+		string passinsta;
+		string passsnap;
+	public:
+	void setdata(string pgog,string pfb,string pinsta,string psnap)
+	{
+		passgog=pgog;
+		passfb=pfb;
+		passinsta=pinsta;
+		passsnap=psnap;
+	}
+	string getpassgog()
+	{
+		return passgog;
+	}	
+	string getpassfb()
+	{
+		return passfb;
+	}
+	string getpassinsta()
+	{
+		return passinsta;
+	}
+	string getpasssnap()
+	{
+		return passsnap;
+	}
+};
+int main()
+{
+	string n,p;
+	int choice=0;
+	id acc;
+	acc.setdata("googleID","FacebookID","InstagramID","SnapchatID");
+	password passw;
+	passw.setdata("GooglePassword","FacebookPassword","InstagramPassword","SnapchatPassword");
+	a obj;
+	obj.setdata("name","password");
+	
+	cout << "enter name : ";
+	cin>>n;
+	cout << "\nenter password : ";
+	cin>>p;
+	system("cls");
+	if (n == obj.getname() && p == obj.getpassword())
+	{
+		do{
+		cout << "1.Google" << endl;
+		cout << "2.Facebook"<< endl;
+		cout << "3.Instagram"<< endl;
+		cout << "4.Snapchat" << endl;
+		cout << "5.Exit"<< endl;
+		cout << endl << endl << "Enter number : ";
+		cin >> choice;
+	    system("cls");
+		switch(choice)
+		{
+			case 1:
+				cout << "Google ID : " << acc.getgoogle()<< endl;
+				cout << "Google Password : "<< passw.getpassgog()<< endl;
+				_getch();
+	            system("cls");
+				break;
+		    case 2:
+			    cout << "Facebook ID : " << acc.getfacebook() << endl;
+			    cout << "Facebook Password : "<< passw.getpassfb()<< endl;
+				_getch();
+	            system("cls");
+				break;
+			case 3:
+			    cout << "Instagram ID : "<< acc.getinstagram()<<endl;
+			    cout << "Instagram Password : "<< passw.getpassinsta();
+				_getch();
+	            system("cls");
+				break;
+			case 4:
+			    cout << "Snapchat ID : "<< acc.getsnapchat()<<endl;
+			    cout << "Snapchat Password : "<< passw.getpasssnap()<<endl;
+				_getch();
+	            system("cls");
+				break;
+			case 5:
+			    exit(0);
+	            system("cls");
+				break;
+			default:
+			    cout << "Enter Right Number" << endl;  
+				_getch();
+	            system("cls");  
+	    }
+	    }while(1);
+	}
+	else
+	{
+		cout << "try again";
+		cout << "\nsorry";
+	}
+}
